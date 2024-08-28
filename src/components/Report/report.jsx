@@ -1,63 +1,61 @@
 import { useEffect } from "react";
-import dayjs from "dayjs"
+import dayjs from "dayjs";
 import { useDispatch, useSelector } from "react-redux";
-import { fetchData } from "../../redux/fetchCar"
+import { fetchData } from "../../redux/fetchCar";
 import { useState } from "react";
 import { Button, Form, Pagination, Table } from "react-bootstrap";
 import styles from "./App.module.css";
 import { updatePage, updateLimit } from "../../redux/fetchCar";
 
-function Report(){
-    const dispatch = useDispatch();
-    const mobilList = useSelector((state) => state.mobil.data);
-    let page = useSelector((state)=> state.mobil.page)
-    let limit = useSelector((state)=>state.mobil.limit)
-    const [tempPage, setTempPage] = useState(1);
+function Report() {
+  const dispatch = useDispatch();
+  const mobilList = useSelector((state) => state.mobil.data);
+  let page = useSelector((state) => state.mobil.page);
+  let limit = useSelector((state) => state.mobil.limit);
+  const [tempPage, setTempPage] = useState(1);
 
-    useEffect(() => {
-        dispatch(fetchData({page,limit}));
-      },[dispatch, limit, page]);
+  useEffect(() => {
+    dispatch(fetchData({ page, limit }));
+  }, [dispatch, limit, page]);
 
-
-    return(
-        <div style={{marginTop:84}}>
-          <div className={styles.dashboardHeader}>Dashboard</div>
-          <div className={styles.listOrder}>
-            List Order
-          </div>
-          <Table className={styles.table}>
+  return (
+    <div style={{ marginTop: 84 }}>
+      <div className={styles.dashboardHeader}>Dashboard</div>
+      <div className={styles.listOrder}>List Order</div>
+      <Table className={styles.table}>
         <thead>
-        <tr style={{ borderRadius: 2 }}>
-        <th className={styles.tableHead}>No</th>
-        <th className={styles.tableHead}>User Email</th>
-        <th className={styles.tableHead}>Start Rent</th>
-        <th className={styles.tableHead}>Finish Rent</th>
-        <th className={styles.tableHead}>Price</th>
-        <th className={styles.tableHead}>Category</th>
-        </tr>
-      </thead>
+          <tr style={{ borderRadius: 2 }}>
+            <th className={styles.tableHead}>No</th>
+            <th className={styles.tableHead}>User Email</th>
+            <th className={styles.tableHead}>Start Rent</th>
+            <th className={styles.tableHead}>Finish Rent</th>
+            <th className={styles.tableHead}>Price</th>
+            <th className={styles.tableHead}>Category</th>
+          </tr>
+        </thead>
         <tbody>
-  
-          {
-          mobilList.orders?.map((mobil,index) => (
-            <tr key ={mobil.id}>
-            <td>{(page-1)*limit+index+1}</td>
-            <td>{mobil.User.email}</td>
-            <td>{dayjs(mobil.start_rent_at).format("DD MMMM YYYY")}</td>
-            <td>{dayjs(mobil.finish_rent_at).format("DD MMMM YYYY")}</td>
-            <td>{new Intl.NumberFormat("id-ID", {
+          {mobilList.orders?.map((mobil, index) => (
+            <tr key={mobil.id}>
+              <td>{(page - 1) * limit + index + 1}</td>
+              <td>{mobil.User.email}</td>
+              <td>{dayjs(mobil.start_rent_at).format("DD MMMM YYYY")}</td>
+              <td>{dayjs(mobil.finish_rent_at).format("DD MMMM YYYY")}</td>
+              <td>
+                {new Intl.NumberFormat("id-ID", {
                   style: "currency",
                   currency: "IDR",
-                }).format(mobil?.total_price) || new Intl.NumberFormat("id-ID", {
-                  style: "currency",
-                  currency: "IDR",
-                }).format(mobil?.price)}</td>
-            <td>{mobil.Car?.category}</td>
+                }).format(mobil?.total_price) ||
+                  new Intl.NumberFormat("id-ID", {
+                    style: "currency",
+                    currency: "IDR",
+                  }).format(mobil?.price)}
+              </td>
+              <td>{mobil.Car?.category}</td>
             </tr>
           ))}
-          </tbody>
-          </Table>
-                <div className={styles.footer}>
+        </tbody>
+      </Table>
+      <div className={styles.footer}>
         <div className={styles.footerLeft}>
           <div className={styles.pageOption}>
             <div className={styles.pageOptionText}>Limit</div>
@@ -90,7 +88,7 @@ function Report(){
               </Form.Select>
             </div>
 
-            <Button onClick={() =>dispatch(updatePage(tempPage)) }>Go</Button>
+            <Button onClick={() => dispatch(updatePage(tempPage))}>Go</Button>
           </div>
         </div>
         <Pagination>
@@ -123,22 +121,20 @@ function Report(){
 
           <Pagination.Item
             onClick={() => {
-              dispatch(updatePage(mobilList.pageCount))
+              dispatch(updatePage(mobilList.pageCount));
             }}
           >
             {mobilList.pageCount}
           </Pagination.Item>
           <Pagination.Last
             onClick={() => {
-              dispatch(updatePage(mobilList.pageCount))
+              dispatch(updatePage(mobilList.pageCount));
             }}
           />
         </Pagination>
       </div>
     </div>
-
-    )
+  );
 }
-
 
 export default Report;

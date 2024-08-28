@@ -1,10 +1,46 @@
-canvas{
+.rentedCar {
+  font-family: Arial;
+  font-size: 14px;
+  font-weight: 700;
+  line-height: 20px;
+  text-align: left;
+  margin-top: 58px;
+  border-left: 4px solid #0d28a6;
+  padding-left: 8px;
+}
 
-    width:1154px !important;
-    height:376px !important;
-  
-  }
+.visual {
+  margin-top: 45px;
+}
 
-  .rentedCar{
-    font-family: Arial;font-size: 14px;font-weight: 700;line-height: 20px;text-align: left;margin-top: 58px;
-  }
+.month {
+  margin-top: 18px;
+  font-family: Arial;
+  font-size: 12px;
+  font-weight: 400;
+  line-height: 18px;
+  text-align: left;
+}
+
+.monthDropdown {
+  width: 122px !important;
+  height: 36px !important;
+  padding: 5px 12px 9px 12px !important;
+  border-radius: 2px 0px 0px 2px !important;
+}
+
+.goButton {
+  width: 43px;
+  height: 36px;
+  padding: 8px 12px 8px 12px;
+  gap: 10px;
+  border-radius: 0px 2px 2px 0px;
+  background: rgba(13, 40, 166, 1);
+
+  font-family: rubik;
+  font-size: 14px;
+  font-weight: 400;
+  line-height: 20px;
+  text-align: left;
+  color: white;
+}

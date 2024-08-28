@@ -1,75 +1,71 @@
-.dashboardHeader{
+.dashboardHeader {
   font-family: Arial;
-font-size: 20px;
-font-weight: 700;
-line-height: 30px;
-text-align: left;
-
-}
-.listOrder{
-  margin-top:26px
+  font-size: 20px;
+  font-weight: 700;
+  line-height: 30px;
+  text-align: left;
 }
 .container {
-    margin: 84px;
-    font-size: 14px;
-    line-height: 20px;
-  }
-  
-  .dashboard {
-    font-size: 20px;
-    font-weight: 700;
-    line-height: 30px;
-    margin-bottom: 24px;
-  }
-  
-  .listOrder {
-    font-weight: 700;
-    margin-bottom: 20px;
-    border-left: 4px solid #0d28a6;
-    padding-left: 8px;
-  }
-  
-  .table {
-    margin-bottom: 42px;
-    
+  margin: 84px;
+  font-size: 14px;
+  line-height: 20px;
+}
+
+.dashboard {
+  font-size: 20px;
+  font-weight: 700;
+  line-height: 30px;
+  margin-bottom: 24px;
+}
+
+.listOrder {
+  margin-top: 26px;
+  font-weight: 700;
+  margin-bottom: 20px;
+  border-left: 4px solid #0d28a6;
+  padding-left: 8px;
+}
+
+.table {
+  margin-bottom: 42px;
+}
+
+.tableHead {
+  background-color: #cfd4ed !important;
+
+  &:first-child {
+    border-top-left-radius: 2px;
+    border-bottom-left-radius: 2px;
   }
 
-  .tableHead {
-    background-color: #cfd4ed !important;
+  &:last-child {
+    border-top-right-radius: 2px;
+    border-bottom-right-radius: 2px;
+  }
+}
 
-    &:first-child {
-      border-top-left-radius: 2px;
-      border-bottom-left-radius: 2px;
-    }
-  
-    &:last-child {
-      border-top-right-radius: 2px;
-      border-bottom-right-radius: 2px;
-    }
-  }
-  
-  .footer {
-    display: flex;
-    justify-content: space-between;
-    align-items: flex-start;
-  }
-  
-  .footerLeft {
-    display: flex;
-    gap: 24px;
-  }
-  
-  .pageOption {
-    position: relative;
-  }
-  
-  .pageOptionText {
-    font-size: 12px;
-    line-height: 18px;
-    position: absolute;
-    top: -20px;
-  }
-  
-  .pageJumper {
-    display: flex;
-  }
+.footer {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+}
+
+.footerLeft {
+  display: flex;
+  gap: 24px;
+}
+
+.pageOption {
+  position: relative;
+}
+
+.pageOptionText {
+  font-size: 12px;
+  line-height: 18px;
+  position: absolute;
+  top: -20px;
+}
+
+.pageJumper {
+  display: flex;
+}
