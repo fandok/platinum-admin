@@ -1,3 +1,15 @@
+import {
+  Chart as ChartJS,
+  CategoryScale,
+  LinearScale,
+  PointElement,
+  LineElement,
+  Title,
+  Tooltip,
+  Legend,
+  BarElement,
+} from "chart.js";
+
 import { Bar } from "react-chartjs-2";
 import { useEffect } from "react";
 import { useDispatch, useSelector } from "react-redux";
@@ -13,6 +25,16 @@ const july = {
   start: "2024-07-01",
   end: "2024-07-31",
 };
+ChartJS.register(
+  CategoryScale,
+  LinearScale,
+  PointElement,
+  LineElement,
+  Title,
+  Tooltip,
+  Legend,
+  BarElement
+);
 function Visual() {
   const dispatch = useDispatch();
   const reportData = useSelector((state) => state.report.data);

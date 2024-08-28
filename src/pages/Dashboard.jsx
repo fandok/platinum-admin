@@ -9,7 +9,7 @@ function DashboardMain() {
       <Header></Header>
       <div style={{ display: "flex" }}>
         <div>
-          <Dashboard></Dashboard>
+          <Dashboard dashboard></Dashboard>
         </div>
         <div>
           <Visual></Visual>

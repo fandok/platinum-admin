@@ -1,16 +1,23 @@
-import "./dashboard.css"
+import "./dashboard.css";
 
-function Dashboard(){
-    return(
-        <div className="dashboard">
-        <div className="dashboard-top">
-            Dashboard
-        </div>
-        <div className="dashboard-bot">
-            Dashboard
-        </div>
-        </div>
-    )
+// eslint-disable-next-line react/prop-types
+function Dashboard({ dashboard, car }) {
+  return (
+    <div className="dashboard">
+      {dashboard && (
+        <>
+          <div className="dashboard-top">Dashboard</div>
+          <div className="dashboard-bot">Dashboard</div>
+        </>
+      )}
+      {car && (
+        <>
+          <div className="dashboard-top">Cars</div>
+          <div className="dashboard-bot">List Car</div>
+        </>
+      )}
+    </div>
+  );
 }
 
-export default Dashboard
+export default Dashboard;
