@@ -1,11 +1,28 @@
 import ReactDOM from "react-dom/client";
 import DashboardMain from "./pages/Dashboard";
+import Cars from "./pages/Cars";
+import AddNewCar from "./pages/AddNewCar";
 import "./index.css";
 import { Provider } from "react-redux";
 import { store } from "./redux/store";
 import "bootstrap/dist/css/bootstrap.min.css";
+
+import {
+  BrowserRouter,
+  createBrowserRouter,
+  Route,
+  RouterProvider,
+  Routes,
+} from "react-router-dom";
+
+const router = createBrowserRouter([
+  { path: "/dashboard", element: <DashboardMain /> },
+  { path: "/cars", element: <Cars /> },
+  { path: "/addnewcar", element: <AddNewCar /> },
+]);
+
 ReactDOM.createRoot(document.getElementById("root")).render(
   <Provider store={store}>
-    <DashboardMain></DashboardMain>
+    <RouterProvider router={router} />
   </Provider>
 );
