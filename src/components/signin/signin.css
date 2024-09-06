@@ -1,0 +1,24 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+.carimage {
+  width: 1433px;
+  height: 900px;
+  left: -250px;
+}
+
+.formcontrol {
+  width: 482px;
+  height: 900px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: white;
+}
+
+button {
+  width: 370px;
+  height: 36px;
+  background-color: #0d28a6;
+}
