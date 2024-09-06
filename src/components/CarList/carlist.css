@@ -1,0 +1,181 @@
+.header {
+  font-family: Arial;
+  font-size: 12px;
+  font-weight: 700;
+  line-height: 18px;
+  text-align: left;
+}
+
+.listcar {
+  font-family: Rubik;
+  font-size: 12px;
+  font-weight: 400;
+  line-height: 18px;
+  text-align: left;
+}
+
+.listcar-title {
+  width: 75px;
+  height: 30px;
+  font-family: Arial;
+  font-size: 20px;
+  font-weight: 700;
+  line-height: 30px;
+  text-align: left;
+}
+
+.carlist {
+  width: 1, 101px;
+  height: 1, 494px;
+  gap: 24px;
+  display: flex;
+  flex-wrap: wrap;
+  margin-top: 24px;
+}
+
+.carBox {
+  width: 351px;
+  height: 482px;
+  padding: 24px 0px 0px 24px;
+  gap: 24px;
+  border-radius: 8px;
+}
+
+.carImage {
+  width: 303px;
+  height: 222px;
+}
+
+.namatipe {
+  font-family: Arial;
+  font-size: 14px;
+  font-weight: 400;
+  line-height: 20px;
+  text-align: left;
+  margin-top: 16px;
+}
+
+.addButton {
+  width: 142px;
+  height: 36px;
+  padding: 4px 12px 4px 12px;
+  gap: 12px;
+  background: rgba(13, 40, 166, 1);
+  color: white;
+  font-family: Arial;
+  font-size: 14px;
+  font-weight: 700;
+  line-height: 20px;
+  text-align: left;
+}
+
+.filterButton {
+  width: 102px;
+  height: 36px;
+  gap: 10px;
+  border-radius: 2px 0px 0px 0px;
+  border: 1px solid rgba(174, 183, 225, 1);
+  font-family: Arial;
+  font-size: 14px;
+  font-weight: 700;
+  line-height: 20px;
+  color: rgba(174, 183, 225, 1);
+}
+
+.buttons {
+  display: flex;
+  width: 303px;
+  height: 48px;
+  gap: 16px;
+  margin-top: 24px;
+}
+
+.deleteButton {
+  display: flex;
+  width: 143.5px;
+  height: 48px;
+  padding: 14px 14px 14px 14px;
+  gap: 10px;
+  border-radius: 2px 0px 0px 0px;
+  border: 1px 0px 0px 0px;
+  background: rgba(255, 255, 255, 1);
+  font-family: Arial;
+  font-size: 14px;
+  font-weight: 700;
+  line-height: 20px;
+  text-align: left;
+  color: rgba(250, 44, 90, 1);
+  border: 1px solid rgba(250, 44, 90, 1);
+}
+
+.editButton {
+  display: flex;
+  width: 143.5px;
+  height: 48px;
+  padding: 14px 14px 14px 14px;
+  gap: 12px;
+  border-radius: 2px 0px 0px 0px;
+  font-family: Arial;
+  font-size: 14px;
+  font-weight: 700;
+  line-height: 20px;
+  text-align: left;
+  background: rgba(92, 184, 95, 1);
+  color: rgba(255, 255, 255, 1);
+  border-style: none;
+}
+
+.price {
+  font-family: Arial;
+  font-size: 16px;
+  font-weight: 700;
+  line-height: 24px;
+  text-align: left;
+  margin-top: 8px;
+}
+
+.updated {
+  font-family: Arial;
+  font-size: 14px;
+  font-weight: 400;
+  line-height: 20px;
+  text-align: left;
+  margin-top: 16px;
+}
+
+.category {
+  margin-top: 16px;
+}
+
+.modalBody {
+  text-align: center;
+  padding: 24px 32px;
+  font-family: Arial;
+}
+
+.modalImage {
+  margin-bottom: 24px;
+}
+
+.modalTitle {
+  font-size: 16px;
+  font-weight: 700;
+  line-height: 24px;
+  margin-bottom: 16px;
+}
+
+.modalDesc {
+  font-size: 14px;
+  line-height: 20px;
+  margin-bottom: 24px;
+}
+
+.modalAction {
+  display: flex;
+  justify-content: center;
+  gap: 16px;
+}
+
+.modalButton {
+  width: 87px;
+}
