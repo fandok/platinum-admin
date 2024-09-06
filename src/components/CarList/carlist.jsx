@@ -120,7 +120,9 @@ function CarList() {
                     ingin menghapus?
                   </div>
                   <div className="modalAction">
-                    <Button className="modalButton">Ya</Button>
+                    <Button className="modalButton" onClick={axios.delete()}>
+                      Ya
+                    </Button>
                     <Button onClick={handleClose} variant="outline-primary">
                       Tidak
                     </Button>
