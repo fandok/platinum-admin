@@ -36,6 +36,27 @@ function CarList() {
     dispatch(fetchCarList(category));
   }, [category, dispatch]);
 
+  const handleDelete = async (id) => {
+    try {
+      const response = await axios.delete(
+        `https://api-car-rental.binaracademy.org/admin/car/${id}`,
+        {
+          headers: {
+            access_token:
+              "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJlbWFpbCI6ImFkbWluQGJjci5pbyIsInJvbGUiOiJBZG1pbiIsImlhdCI6MTY2NTI0MjUwOX0.ZTx8L1MqJ4Az8KzoeYU2S614EQPnqk6Owv03PUSnkzc",
+          },
+        }
+      );
+      if (Response.ok) {
+        handleClose;
+      } else {
+        throw new Error(response.statusText);
+      }
+    } catch (e) {
+      console.error(e);
+    }
+  };
+
   return (
     <>
       <div style={{ display: "flex", marginTop: 32, height: 18 }}>
@@ -120,7 +141,7 @@ function CarList() {
                     ingin menghapus?
                   </div>
                   <div className="modalAction">
-                    <Button className="modalButton" onClick={axios.delete()}>
+                    <Button className="modalButton" onClick={handleDelete}>
                       Ya
                     </Button>
                     <Button onClick={handleClose} variant="outline-primary">

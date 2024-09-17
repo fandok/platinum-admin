@@ -1,21 +1,47 @@
 import "./addcar.css";
-import axios from "axios";
-import { useEffect, useState } from "react";
+import { useState } from "react";
+import { Navigate } from "react-router-dom";
 function AddCar() {
-  useEffect(() => {
-    const addData = async () => {
-      const response = await axios.post(
+  const [formData, setFormData] = useState({
+    name: "",
+    category: "small",
+    price: "",
+    image: "",
+  });
+  const onImageChange = (e) => {
+    const newImageData = { ...formData, image: e.target.files[0] };
+    setFormData(newImageData);
+  };
+  const onInputChange = (e) => {
+    const newFormData = { ...formData, [e.target.name]: e.target.value };
+    setFormData(newFormData);
+  };
+
+  const handleSubmit = async (e) => {
+    e.preventDefault();
+    try {
+      const response = await fetch(
         "https://api-car-rental.binaracademy.org/admin/car",
         {
+          method: "POST",
           headers: {
             access_token:
               "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJlbWFpbCI6ImFkbWluQGJjci5pbyIsInJvbGUiOiJBZG1pbiIsImlhdCI6MTY2NTI0MjUwOX0.ZTx8L1MqJ4Az8KzoeYU2S614EQPnqk6Owv03PUSnkzc",
+            "Content-Type": "application/json",
           },
-          params: {},
+          body: JSON.stringify(formData),
         }
       );
-    };
-  });
+
+      if (response.ok) {
+        Navigate("/dashboard");
+      } else {
+        throw new Error(response.statusText);
+      }
+    } catch (e) {
+      console.log(e);
+    }
+  };
 
   return (
     <>
@@ -29,26 +55,35 @@ function AddCar() {
         <div className="divline">
           <span className="text-box">Nama/Tipe Mobil*</span>
           <input
+            id="name"
+            name="name"
             type="text"
             placeholder="Input Nama/Tipe Mobil"
             className="search-box"
+            onChange={onInputChange}
           />
         </div>
         <div className="divline">
           <span className="text-box">Harga*</span>
           <input
+            id="price"
+            name="price"
             type="text"
             placeholder="Input Harga Sewa Mobil"
             className="search-box"
+            onChange={onInputChange}
           />
         </div>
         <div className="divline-foto">
           <span className="text-box">Foto*</span>
           <div style={{ display: "flex", flexDirection: "column" }}>
             <input
-              type="text"
+              id="image"
+              name="image"
+              type="file"
               placeholder="Upload Foto Mobil"
               className="search-box"
+              onChange={onImageChange}
             />
             <span className="max-size">File size max. 2MB</span>
           </div>
@@ -56,7 +91,12 @@ function AddCar() {
 
         <div className="divline">
           <span className="text-box">Kategori*</span>
-          <select className="search-box">
+          <select
+            className="search-box"
+            id="category"
+            name="category"
+            onChange={onInputChange}
+          >
             <option value="small">2 - 4 orang</option>
             <option value="medium">4 - 6 orang</option>
             <option value="large">6 - 8 orang</option>
@@ -68,7 +108,9 @@ function AddCar() {
 
       <div className="button-div">
         <button className="cancel-button">Cancel</button>
-        <button className="save-button">Save</button>
+        <button className="save-button" onClick={handleSubmit}>
+          Save
+        </button>
       </div>
     </>
   );
