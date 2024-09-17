@@ -8,13 +8,7 @@ import { store } from "./redux/store";
 import "bootstrap/dist/css/bootstrap.min.css";
 import Login from "./components/signin/signin";
 
-import {
-  BrowserRouter,
-  createBrowserRouter,
-  Route,
-  RouterProvider,
-  Routes,
-} from "react-router-dom";
+import { createBrowserRouter, RouterProvider } from "react-router-dom";
 
 const router = createBrowserRouter([
   { path: "/dashboard", element: <DashboardMain /> },
